@@ -1,4 +1,6 @@
 import React from "react";
+import Slides from "../Slides";
+const nSlides = Slides.length;
 
 let initialValue:any = {}
 const PageContext = React.createContext(initialValue);
@@ -50,7 +52,8 @@ class PageContextProvider extends React.Component {
     this.setState({ arabic: true });
   }
   next(){
-    this.setState({page: this.state.page + 1})
+    if(this.state.page < nSlides - 1)
+      this.setState({page: this.state.page + 1})
   }
   back(){
     if(this.state.page > 0)

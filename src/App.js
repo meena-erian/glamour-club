@@ -8,9 +8,7 @@ function App() {
     <PageContextProvider>
       <div className="App">
         <header className="App-header">
-          <p>
             <Wizard />
-          </p>
         </header>
       </div>
     </PageContextProvider>

@@ -6,11 +6,11 @@ export default class Wizard extends React.PureComponent {
     static contextType = PageContext;
     render() {
         return (
-            <div>
-                <Slide currentPage={this.context.page} />
-                <button onClick={this.context.next}>Next</button>
-                <button onClick={this.context.back}>Back</button>
-            </div>
+            <Slide
+                currentPage={this.context.page}
+                next={this.context.next}
+                back={this.context.back}
+            />
         );
     }
 }
