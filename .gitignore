@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+# deploying
+/deploy/.secret
+/deploy/build.zip
+
 # testing
 /coverage
 
