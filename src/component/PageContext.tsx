@@ -20,6 +20,7 @@ class PageContextProvider extends React.Component {
   
   public state: any = {
     arabic: false,
+    page: 0,
     width: window.innerWidth,
     height: window.innerHeight,
     isLocalhost: isLocalhost,
@@ -28,9 +29,11 @@ class PageContextProvider extends React.Component {
   constructor(props: any) {
     super(props);
     this.langArabic = this.langArabic.bind(this);
+    this.next = this.next.bind(this);
+    this.back = this.back.bind(this);
     this.update = this.update.bind(this);
   }
-  async update() {
+  update() {
     this.setState({
       width: window.innerWidth,
       height: window.innerHeight,
@@ -46,12 +49,21 @@ class PageContextProvider extends React.Component {
   langArabic() {
     this.setState({ arabic: true });
   }
+  next(){
+    this.setState({page: this.state.page + 1})
+  }
+  back(){
+    if(this.state.page > 0)
+      this.setState({page: this.state.page - 1});
+  }
   render() {
     return (
       <PageContext.Provider
         value={{
           ...this.state,
           langArabic: this.langArabic,
+          next: this.next,
+          back: this.back
         }}
       >
         {this.props.children}
