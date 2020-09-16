@@ -6,7 +6,7 @@ const images = {
     FACE_MASK : "/assets/face-mask.png",
     FRONT_CLOUD : "/assets/front-cloud.png",
     WOMENS_DAY : "/assets/womens-day-hr.png",
-    TWO_GIRLS : "/assets/2girls.png.png",
+    TWO_GIRLS : "/assets/2girls.png",
     BACK_CLOUD : "/assets/back-cloud.png",
     GIRL_00 : "/assets/girl-00.png",
     GIRL_1 : "/assets/girl-1.png",
