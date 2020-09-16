@@ -39,3 +39,12 @@
     transform: rotate(360deg);
   }
 }
+
+.lang-button{
+  cursor: pointer;
+  transition: all ease 0.2;
+}
+
+.lang-button:hover{
+  color: white;
+}
