@@ -8,6 +8,7 @@
 # deploying
 /deploy/.secret
 /deploy/build.zip
+/public/assets
 
 # testing
 /coverage
