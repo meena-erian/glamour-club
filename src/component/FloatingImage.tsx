@@ -5,8 +5,8 @@ interface FloatingImageProps{
     x: number;
     y: number;
     src: string;
-    width: number;
-    style: CSSProperties;
+    width?: number;
+    style?: CSSProperties;
 }
 
 export default class FloatingImage extends React.PureComponent<FloatingImageProps>{

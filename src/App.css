@@ -40,6 +40,11 @@
   }
 }
 
+.animation-canvas{
+  overflow: hidden;
+  width: 100%;
+}
+
 .lang-button{
   cursor: pointer;
   transition: all ease 0.2;

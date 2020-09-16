@@ -1,5 +1,6 @@
 import React from "react";
 import Float from "../component/Float";
+import Cloud from "../component/Cloud";
 
 interface AnimatedBorderProps {
     stage: number; // unique identifier for the current shape of the border regardless of screen size
@@ -77,7 +78,7 @@ export default class Slide0 extends React.PureComponent<{ isMobile:boolean, inde
         const isMobile = this.props.isMobile;
         const stage = this.state.stage;
         return (
-            <div>
+            <div className="animation-canvas">
                 <Float x={0} y={-2}>
                     <AnimatedBorder stage={stage} isMobile={isMobile} />
                 </Float>
@@ -106,6 +107,7 @@ export default class Slide0 extends React.PureComponent<{ isMobile:boolean, inde
                         alt={"everlast logo"}
                     />
                 </Float>
+                <Cloud stage={0}/>
             </div>
         );
     }
