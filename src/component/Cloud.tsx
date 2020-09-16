@@ -1,6 +1,6 @@
 import React from "react";
 //import { PageContext } from "./PageContext";
-import Image from "./Image";
+import FloatingImage from "./FloatingImage";
 import {images} from "../constants";
 
 interface CloudProps {
@@ -14,9 +14,17 @@ export default class Cloud extends React.PureComponent<CloudProps>{
 
         return (
             <div>
-                <Image 
+                <FloatingImage 
+                    x={0}
+                    y={0}
                     src={images.BACK_CLOUD}
-                    width={500}
+                    width={600}
+                />
+                <FloatingImage 
+                    x={0}
+                    y={0}
+                    src={images.FRONT_CLOUD}
+                    width={600}
                 />
             </div>
         );

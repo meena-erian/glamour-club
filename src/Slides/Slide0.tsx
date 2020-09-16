@@ -60,10 +60,10 @@ function AnimatedBorder(props: AnimatedBorderProps) {
     );
 }
 
-export default class Slide0 extends React.PureComponent<{ isMobile:boolean, index: number, next: any, back: any }> {
+export default class Slide0 extends React.PureComponent<{ isMobile: boolean, index: number, next: any, back: any }> {
 
     public state = { stage: 0 };
-    
+
     componentDidMount() {
         setTimeout(() => {
             this.setState({ stage: this.state.stage + 1 });
@@ -107,7 +107,9 @@ export default class Slide0 extends React.PureComponent<{ isMobile:boolean, inde
                         alt={"everlast logo"}
                     />
                 </Float>
-                <Cloud stage={0}/>
+                <Float x={0} y={stage>1? 200: 800}>
+                    <Cloud stage={0} />
+                </Float>
             </div>
         );
     }
