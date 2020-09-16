@@ -1,7 +1,8 @@
 import React from "react";
 //import { PageContext } from "./PageContext";
 import FloatingImage from "./FloatingImage";
-import {images} from "../constants";
+import { images } from "../constants";
+import Float from "./Float";
 
 interface CloudProps {
     stage: number;
@@ -14,13 +15,26 @@ export default class Cloud extends React.PureComponent<CloudProps>{
 
         return (
             <div>
-                <FloatingImage 
+                <FloatingImage
                     x={0}
                     y={0}
                     src={images.BACK_CLOUD}
                     width={600}
                 />
-                <FloatingImage 
+                <Float
+                x={0}
+                y={-250}
+                style={{width:"100vw", height: 500, overflow: "hidden"}}
+                >
+                    <FloatingImage
+                        x={0}
+                        y={this.props.stage>0? 70 : 470}
+                        src={images.TWO_GIRLS}
+                        width={500}
+                    />
+                </Float>
+
+                <FloatingImage
                     x={0}
                     y={0}
                     src={images.FRONT_CLOUD}

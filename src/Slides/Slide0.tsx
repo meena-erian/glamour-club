@@ -36,7 +36,7 @@ function AnimatedBorder(props: AnimatedBorderProps) {
     }
 
     let langSwitch = false;
-    if (props.stage === 2) {
+    if (props.stage >= 2) {
         langSwitch = true;
     }
 
@@ -71,7 +71,11 @@ export default class Slide0 extends React.PureComponent<{ isMobile: boolean, ind
 
         setTimeout(() => {
             this.setState({ stage: this.state.stage + 1 });
-        }, 6000)
+        }, 6000);
+
+        setTimeout(() => {
+            this.setState({ stage: this.state.stage + 1 });
+        }, 7000)
     }
 
     render() {
@@ -79,7 +83,7 @@ export default class Slide0 extends React.PureComponent<{ isMobile: boolean, ind
         const stage = this.state.stage;
         return (
             <div className="animation-canvas">
-                <Float x={0} y={-2}>
+                <Float x={0} y={-2} style={{zIndex: 99}}>
                     <AnimatedBorder stage={stage} isMobile={isMobile} />
                 </Float>
 
@@ -108,7 +112,7 @@ export default class Slide0 extends React.PureComponent<{ isMobile: boolean, ind
                     />
                 </Float>
                 <Float x={0} y={stage>1? 200: 800}>
-                    <Cloud stage={0} />
+                    <Cloud stage={stage-2} />
                 </Float>
             </div>
         );

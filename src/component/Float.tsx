@@ -1,9 +1,10 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 interface FloatProps{
     x:number; // X Displacement from the onigin in pixels
     y:number; // Y Displacement from the origin in pixels
     transitionDelay?: string;
+    style?: CSSProperties;
 }
 
 export default class Float extends React.Component<FloatProps>{
@@ -15,7 +16,8 @@ export default class Float extends React.Component<FloatProps>{
                 left: `calc( 50% + ${this.props.x}px )`,
                 top: `calc( 50% + ${this.props.y}px )`,
                 transform: "translate(-50%, -50%)",
-                transition: `all ${transitionDelay} ease`
+                transition: `all ${transitionDelay} ease`,
+                ...this.props.style
             }}>
                 {this.props.children}
             </div>
