@@ -5,6 +5,7 @@ import { images } from "../constants";
 import Float from "./Float";
 
 interface CloudProps {
+    component?: any;
     image?: string;
     stage: number;
 }
@@ -28,12 +29,17 @@ export default class Cloud extends React.PureComponent<CloudProps>{
                     y={-250}
                     style={{ width: "100vw", height: 500, overflow: "hidden" }}
                 >
+                    {this.props.component? 
+                    <Float x={0} y={stage>0&&stage<2?70:470}>
+                        {this.props.component}
+                    </Float>
+                    :
                     <FloatingImage
                         x={0}
                         y={stage > 0 && stage < 2 ? 70 : 470}
                         src={image}
                         width={500}
-                    />
+                    />}
                 </Float>
 
                 <FloatingImage
