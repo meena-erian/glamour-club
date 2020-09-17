@@ -139,8 +139,8 @@ export default class Slide0 extends React.PureComponent<{
         this.setState({ stage: this.state.stage + 1 });
         // Stage = 4 once language button is pressed
         setTimeout(() => {
-            this.setState({ stage: this.state.stage + 1 });
-        }, 500); // Stage = 5 500ms after language button is pressed
+            this.props.next();
+        }, 500); // Switching to Slide1, 500ms after language button is pressed
     }
 
     render() {

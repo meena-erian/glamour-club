@@ -5,13 +5,15 @@ import { images } from "../constants";
 import Float from "./Float";
 
 interface CloudProps {
+    image?: string;
     stage: number;
 }
 
 export default class Cloud extends React.PureComponent<CloudProps>{
-    //static contextType = PageContext;
     render() {
-        //const { isMobile, arabic, page, width, height } = this.context;
+        let { image, stage } = this.props;
+
+        if (!image) image = images.TWO_GIRLS;
 
         return (
             <div>
@@ -22,14 +24,14 @@ export default class Cloud extends React.PureComponent<CloudProps>{
                     width={600}
                 />
                 <Float
-                x={0}
-                y={-250}
-                style={{width:"100vw", height: 500, overflow: "hidden"}}
+                    x={0}
+                    y={-250}
+                    style={{ width: "100vw", height: 500, overflow: "hidden" }}
                 >
                     <FloatingImage
                         x={0}
-                        y={this.props.stage>0&&this.props.stage<2 ? 70 : 470}
-                        src={images.TWO_GIRLS}
+                        y={stage > 0 && stage < 2 ? 70 : 470}
+                        src={image}
                         width={500}
                     />
                 </Float>
