@@ -28,7 +28,7 @@ export default class Cloud extends React.PureComponent<CloudProps>{
                 >
                     <FloatingImage
                         x={0}
-                        y={this.props.stage>0? 70 : 470}
+                        y={this.props.stage>0&&this.props.stage<2 ? 70 : 470}
                         src={images.TWO_GIRLS}
                         width={500}
                     />
