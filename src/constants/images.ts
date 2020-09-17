@@ -9,6 +9,7 @@ const images = {
     TWO_GIRLS : "/assets/2girls.png",
     BACK_CLOUD : "/assets/back-cloud.png",
     GIRL_00 : "/assets/girl-00.png",
+    GIRL_0 : "/assets/girl-0.png",
     GIRL_1 : "/assets/girl-1.png",
     GIRL_2 : "/assets/girl-2.png",
     GIRL_3 : "/assets/girl-3.png",
