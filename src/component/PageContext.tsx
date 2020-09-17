@@ -30,7 +30,7 @@ class PageContextProvider extends React.Component {
   };
   constructor(props: any) {
     super(props);
-    this.langArabic = this.langArabic.bind(this);
+    this.setArabic = this.setArabic.bind(this);
     this.next = this.next.bind(this);
     this.back = this.back.bind(this);
     this.update = this.update.bind(this);
@@ -48,7 +48,7 @@ class PageContextProvider extends React.Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
-  langArabic() {
+  setArabic() {
     this.setState({ arabic: true });
   }
   next(){
@@ -64,7 +64,7 @@ class PageContextProvider extends React.Component {
       <PageContext.Provider
         value={{
           ...this.state,
-          langArabic: this.langArabic,
+          setArabic: this.setArabic,
           next: this.next,
           back: this.back
         }}

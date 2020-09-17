@@ -10,6 +10,7 @@ export default class Wizard extends React.PureComponent {
                 isMobile={this.context.isMobile}
                 currentPage={this.context.page}
                 next={this.context.next}
+                setArabic={this.context.setArabic}
                 back={this.context.back}
             />
         );

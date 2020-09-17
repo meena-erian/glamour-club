@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function (props: { isMobile:boolean, index: number, next: any, back: any }) {
+export default function (props: { isMobile:boolean, index: number, next: any, setArabic: any, back: any }) {
     return (
         <div className="animation-canvas">
             <h1>{props.index}</h1>

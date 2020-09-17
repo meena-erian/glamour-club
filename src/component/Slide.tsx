@@ -5,6 +5,7 @@ interface SlideProps {
     isMobile: boolean;
     currentPage: number;
     next: Function;
+    setArabic: Function;
     back: Function;
 };
 
@@ -15,6 +16,7 @@ export default class Slide extends React.PureComponent<SlideProps>{
             isMobile={this.props.isMobile}
             index={this.props.currentPage}
             next={this.props.next}
+            setArabic={this.props.setArabic}
             back={this.props.back}
         />
     }

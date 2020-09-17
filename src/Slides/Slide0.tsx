@@ -60,9 +60,16 @@ function AnimatedBorder(props: AnimatedBorderProps) {
     );
 }
 
-export default class Slide0 extends React.PureComponent<{ isMobile: boolean, index: number, next: any, back: any }> {
+export default class Slide0 extends React.PureComponent<{
+    isMobile: boolean, index: number, next: Function, setArabic: Function, back: Function
+}> {
 
     public state = { stage: 0 };
+
+    constructor(props: any) {
+        super(props);
+        this.next = this.next.bind(this);
+    }
 
     componentDidMount() {
         setTimeout(() => {
@@ -78,12 +85,16 @@ export default class Slide0 extends React.PureComponent<{ isMobile: boolean, ind
         }, 7000)
     }
 
+    next(isArabic: boolean = false) {
+
+    }
+
     render() {
         const isMobile = this.props.isMobile;
         const stage = this.state.stage;
         return (
             <div className="animation-canvas">
-                <Float x={0} y={-2} style={{zIndex: 99}}>
+                <Float x={0} y={-2} style={{ zIndex: 99 }}>
                     <AnimatedBorder stage={stage} isMobile={isMobile} />
                 </Float>
 
@@ -111,8 +122,8 @@ export default class Slide0 extends React.PureComponent<{ isMobile: boolean, ind
                         alt={"everlast logo"}
                     />
                 </Float>
-                <Float x={0} y={stage>1? 200: 800}>
-                    <Cloud stage={stage-2} />
+                <Float x={0} y={stage > 1 ? 200 : 800}>
+                    <Cloud stage={stage - 2} />
                 </Float>
             </div>
         );
