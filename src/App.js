@@ -26,7 +26,8 @@ class App extends React.Component {
   state = {resourcesLoaded: false}
 
   componentDidMount(){
-    Promise.allSettled(casheImage(imagesArray)).then(()=>{
+    let PromiseAll = Promise.allSettled || Promise.all;
+    PromiseAll(casheImage(imagesArray)).then(()=>{
       this.setState({resourcesLoaded: true});
     },(promises)=>{
       console.error("Failed to load some recources");
