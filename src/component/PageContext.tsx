@@ -48,8 +48,8 @@ class PageContextProvider extends React.Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
-  setArabic() {
-    this.setState({ arabic: true });
+  setArabic(arabic:boolean = true) {
+    this.setState({ arabic: arabic });
   }
   next(){
     if(this.state.page < nSlides - 1)
