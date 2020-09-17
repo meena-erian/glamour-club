@@ -40,16 +40,33 @@
   }
 }
 
-.animation-canvas{
+.animation-canvas {
   overflow: hidden;
   width: 100%;
 }
 
-.lang-button{
+.lang-button {
   cursor: pointer;
   transition: all ease 0.2;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+  supported by Chrome, Edge, Opera and Firefox */
 }
 
-.lang-button:hover{
+.lang-button:hover {
   color: white;
+}
+
+.lang-button:active {
+  color: black;
 }
