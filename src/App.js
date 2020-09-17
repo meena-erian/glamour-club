@@ -26,11 +26,11 @@ class App extends React.Component {
   state = {resourcesLoaded: false}
 
   componentDidMount(){
-    let PromiseAll = Promise.allSettled || Promise.all;
-    PromiseAll(casheImage(imagesArray)).then(()=>{
+    Promise.all(casheImage(imagesArray)).then(()=>{
       this.setState({resourcesLoaded: true});
     },(promises)=>{
       console.error("Failed to load some recources");
+      window.alert("Please check your internet connection and reload the page");
       console.log(promises);
       this.setState({resourcesLoaded: true});
     });
