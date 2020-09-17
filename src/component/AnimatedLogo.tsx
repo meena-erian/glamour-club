@@ -15,7 +15,7 @@ export default function AnimatedLogo(props:{isMobile:boolean, stage:number}) {
     }
 
     if(stage > 3){
-        style.transition = "all .5s ease";
+        style.transition = "all .3s ease";
         style.transform = "scale(5)";
         style.backgroundColor = "inherit";
         style.opacity = 0.3

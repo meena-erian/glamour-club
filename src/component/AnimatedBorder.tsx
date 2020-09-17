@@ -41,8 +41,8 @@ export default function AnimatedBorder(props: AnimatedBorderProps) {
     }
 
     if (props.stage > 3) {
-        outterStyle.transition = "all .5s ease";
-        innerStyle.transition = "all .5s ease";
+        outterStyle.transition = "all .3s ease";
+        innerStyle.transition = "all .3s ease";
         innerStyle.backgroundColor = "inherit";
         innerStyle.width = 290;
         innerStyle.height = 290;
