@@ -48,10 +48,10 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
 
         return (
             <div className="animation-canvas">
-                <Float x={0} y={-2} style={{ zIndex: 99 }}>
+                <Float x={0} y={-2} style={{ zIndex: 0 }}>
                     <AnimatedBorder stage={4} isMobile={isMobile} nextSlide={next} />
                 </Float>
-                <Float x={0} y={0} style={{ zIndex: 100 }}>
+                <Float x={0} y={0} style={{ zIndex: 0 }}>
                     <AnimatedLogo isMobile={isMobile} stage={4} />
                 </Float>
                 <Float x={0} y={200}>
