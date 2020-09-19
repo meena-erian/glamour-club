@@ -5,6 +5,7 @@ import FloatingImage from "../component/FloatingImage";
 import AnimatedBorder from "../component/AnimatedBorder";
 import AnimatedLogo from "../component/AnimatedLogo";
 import {images, text} from "../constants"
+import NavBar from "../component/NavBar";
 
 
 export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any, arabic: boolean }> {
@@ -54,6 +55,7 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                 <Float x={0} y={0} style={{ zIndex: 0 }}>
                     <AnimatedLogo isMobile={isMobile} stage={4} />
                 </Float>
+                <NavBar isMobile={isMobile} arabic={arabic}/>
                 <Float x={0} y={200}>
                     <Cloud stage={0} 
                         component={
