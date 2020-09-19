@@ -26,9 +26,11 @@ export default class Cloud extends React.PureComponent<CloudProps>{
                 />
                 <Float
                     x={0}
-                    y={-250}
-                    style={{ width: "100vw", height: 500, overflow: "hidden" }}
+                    y={-500}
+                    style={{ width: "100vw", height: 1000, overflow: "hidden" }}
                 >
+                    <Float x={0} y={250}>
+                    
                     {this.props.component? 
                     <Float x={0} y={stage>0&&stage<2?70:470}>
                         {this.props.component}
@@ -40,6 +42,7 @@ export default class Cloud extends React.PureComponent<CloudProps>{
                         src={image}
                         width={500}
                     />}
+                    </Float>
                 </Float>
 
                 <FloatingImage
