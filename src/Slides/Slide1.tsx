@@ -17,19 +17,19 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
 
         setTimeout(() => {
             this.setState({ stage: this.state.stage + 1 });
-        }, 4000); // Stage = 2
+        }, 5000); // Stage = 2
 
         setTimeout(() => {
             this.setState({ stage: this.state.stage + 1 });
-        }, 5000); // Stage = 3
+        }, 6000); // Stage = 3
 
         setTimeout(() => {
             this.setState({ stage: this.state.stage + 1 });
-        }, 8000); // Stage = 4
+        }, 14000); // Stage = 4
 
         setTimeout(() => {
             this.setState({ stage: this.state.stage + 1 });
-        }, 9000); // Stage = 5
+        }, 15000); // Stage = 5
 
     }
     render() {
