@@ -60,7 +60,7 @@ export default function AnimatedBorder(props: AnimatedBorderProps) {
                     transition: "all .5s ease",
                     opacity: langSwitch ? 1 : 0
                 }}
-                    onClick={props.nextSlide}
+                    onClick={() => props.nextSlide(false)}
                 >English</span>
                 <span className="lang-button" style={{
                     float: "right",

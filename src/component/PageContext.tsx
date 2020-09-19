@@ -48,7 +48,7 @@ class PageContextProvider extends React.Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
-  setArabic(arabic:boolean = true) {
+  setArabic(arabic:boolean = false) {
     this.setState({ arabic: arabic });
   }
   next(){
