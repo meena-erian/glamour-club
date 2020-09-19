@@ -4,7 +4,7 @@ import Float from "../component/Float";
 import AnimatedBorder from "../component/AnimatedBorder";
 import AnimatedLogo from "../component/AnimatedLogo";
 
-export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any }> {
+export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any, arabic: boolean }> {
     public state = { stage: 0 };
     render() {
         const { index, back, next, isMobile } = this.props;

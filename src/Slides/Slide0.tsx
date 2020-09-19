@@ -7,7 +7,7 @@ import AnimatedLogo from "../component/AnimatedLogo";
 
 
 export default class Slide0 extends React.PureComponent<{
-    isMobile: boolean, index: number, next: Function, setArabic: Function, back: Function
+    isMobile: boolean, index: number, next: Function, setArabic: Function, back: Function, arabic: boolean
 }> {
 
     public state = { stage: 0 };

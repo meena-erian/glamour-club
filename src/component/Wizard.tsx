@@ -12,6 +12,7 @@ export default class Wizard extends React.PureComponent {
                 next={this.context.next}
                 setArabic={this.context.setArabic}
                 back={this.context.back}
+                arabic={this.context.arabic}
             />
         );
     }

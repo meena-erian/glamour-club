@@ -7,6 +7,7 @@ interface SlideProps {
     next: Function;
     setArabic: Function;
     back: Function;
+    arabic: boolean;
 };
 
 export default class Slide extends React.PureComponent<SlideProps>{
@@ -18,6 +19,7 @@ export default class Slide extends React.PureComponent<SlideProps>{
             next={this.props.next}
             setArabic={this.props.setArabic}
             back={this.props.back}
+            arabic={this.props.arabic}
         />
     }
 }

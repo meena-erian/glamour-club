@@ -4,10 +4,10 @@ import Float from "../component/Float";
 import FloatingImage from "../component/FloatingImage";
 import AnimatedBorder from "../component/AnimatedBorder";
 import AnimatedLogo from "../component/AnimatedLogo";
-import {images} from "../constants"
+import {images, text} from "../constants"
 
 
-export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any }> {
+export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any, arabic: boolean }> {
     public state = { stage: 0 };
     componentDidMount(){
         // Stage = 0 initially on component mount
@@ -33,7 +33,7 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
 
     }
     render() {
-        const { index, back, next, isMobile } = this.props;
+        const { index, back, next, isMobile, arabic } = this.props;
         const stage = this.state.stage;
 
         var Text1Y = 0;
@@ -58,11 +58,11 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                     <Cloud stage={0} 
                         component={
                             <Float x={0} y={0}>
-                                <Float x={0} y={Text1Y}>
-                                    <h1>Fist text</h1>
+                                <Float x={0} y={Text1Y} style={{width: "90vw", maxWidth: "480px"}}>
+                                    {arabic? text.HEADLINE_1_ARABIC : text.HEADLINE_1_ENGLISH}
                                 </Float>
-                                <Float x={0} y={Text2Y}>
-                                    <h1>Second text</h1>
+                                <Float x={0} y={Text2Y} style={{width: "90vw", maxWidth: "480px"}}>
+                                    {false? text.HEADLINE_2_ARABIC : text.HEADLINE_2_ENGLISH}
                                 </Float>
                                 <FloatingImage x={0} y={ImageY} src={images.GIRL_0} width={250}/>
                             </Float>
