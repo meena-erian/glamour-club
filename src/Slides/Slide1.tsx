@@ -7,6 +7,18 @@ import AnimatedLogo from "../component/AnimatedLogo";
 import {images, text} from "../constants"
 import NavBar from "../component/NavBar";
 
+
+function Title(props:{arabic:boolean, stage: number}){
+    const {arabic, stage} = props;
+    return <>
+        <h2 style={{margin:0}}>{arabic?'نادى الإشراق':'Glamour Club'}</h2>
+        <p style={{margin:0, transform: "translateY(-11px)"}}>
+            <small>{arabic?'العضوية السانوية':'Annual Membership'}</small>
+        </p>
+    </>;
+}
+
+
 type CSSDistance = number | string;
 
 export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any, arabic: boolean }> {
@@ -40,13 +52,20 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
 
         var Text1Y:CSSDistance = 200;
         var Text2Y:CSSDistance = 200;
+        var TitleY:CSSDistance = 200;
         var ImageY:CSSDistance = 200;
 
-        if(stage>0) Text1Y = -200;
-        if(stage>1) Text1Y = '-100vh';
-        if(stage>2) Text2Y = -200;
-        if(stage>3) Text2Y = '-100vh';
-        if(stage>4) ImageY = -150;
+        if(stage>0) Text1Y = -200; // Show text 1
+        if(stage>1) Text1Y = '-100vh'; // Hide text 1
+        if(stage>2) {
+            Text2Y = -300; // Show text 2
+            TitleY = -200; // Show title
+        }
+        if(stage>3) {
+            Text2Y = '-100vh'; // Hide text 2
+            TitleY = '-200px - 50vh + 37px'; // Place Title on navbar
+        }
+        //if(stage>4) ImageY = -150; // Show girl Image
 
         return (
             <div className="animation-canvas">
@@ -66,6 +85,9 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                                 </Float>
                                 <Float x={0} y={Text2Y} style={{width: "90vw", maxWidth: "480px"}}>
                                     {arabic? text.HEADLINE_2_ARABIC : text.HEADLINE_2_ENGLISH}
+                                </Float>
+                                <Float x={0} y={TitleY} style={{width: `calc( 90vw - 40px - ${isMobile?180:420}px )`}}>
+                                    <Title stage={stage} arabic={arabic}/>
                                 </Float>
                                 <FloatingImage x={0} y={ImageY} src={images.GIRL_0} width={250}/>
                             </Float>
