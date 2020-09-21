@@ -38,15 +38,15 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
         const { index, back, next, isMobile, arabic } = this.props;
         const stage = this.state.stage;
 
-        var Text1Y:CSSDistance = 0;
-        var Text2Y:CSSDistance = 0;
-        var ImageY:CSSDistance = 0;
+        var Text1Y:CSSDistance = 200;
+        var Text2Y:CSSDistance = 200;
+        var ImageY:CSSDistance = 200;
 
-        if(stage>0) Text1Y = -425;
+        if(stage>0) Text1Y = -200;
         if(stage>1) Text1Y = '-100vh';
-        if(stage>2) Text2Y = -425;
+        if(stage>2) Text2Y = -200;
         if(stage>3) Text2Y = '-100vh';
-        if(stage>4) ImageY = -375;
+        if(stage>4) ImageY = -150;
 
         return (
             <div className="animation-canvas">

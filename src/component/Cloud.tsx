@@ -17,7 +17,7 @@ export default class Cloud extends React.PureComponent<CloudProps>{
         if (!image) image = images.TWO_GIRLS;
 
         return (
-            <div>
+            <div id="cloud-div">
                 <FloatingImage
                     x={0}
                     y={0}
@@ -25,24 +25,25 @@ export default class Cloud extends React.PureComponent<CloudProps>{
                     width={600}
                 />
                 <Float
+                    id={"cloud-overflow-hidder"}
                     x={0}
                     y={"-25vh - 100px"}
                     style={{ width: "100vw", height: "calc( 50vh + 200px )", overflow: "hidden" }}
                 >
-                    <Float x={0} y={"25vh - 150px"}>
-
-                        {this.props.component ?
-                            <Float id={'cloud-content-wrapper'} x={0} y={stage > 0 && stage < 2 ? 70 : 470}>
-                                {this.props.component}
-                            </Float>
-                            :
+                    {this.props.component ?
+                        <Float id={"cloud-content-wrapper"} x={0} y={"50%"}>
+                            {this.props.component}
+                        </Float>
+                        :
+                        <Float id={"cloud-content-wrapper"} x={0} y={"25vh - 150px"}>
                             <FloatingImage
                                 x={0}
                                 y={stage > 0 && stage < 2 ? 70 : 470}
                                 src={image}
                                 width={500}
-                            />}
-                    </Float>
+                            />
+                        </Float>
+                    }
                 </Float>
 
                 <FloatingImage
