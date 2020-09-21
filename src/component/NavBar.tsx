@@ -30,13 +30,13 @@ export default class NavBar extends React.PureComponent<NavBarProps> {
                 <Image src={isMobile?images.WOMENS_DAY_MOBILE:images.WOMENS_DAY} style={{
                     height: 50,
                     paddingTop: 10,
-                    paddingLeft: 20,
+                    paddingLeft: isMobile?10:20,
                     float: "left"
                 }} />
                 <Image src={isMobile?images.LOGO_NAV_MOBILE:images.LOGO_NAV} style={{
                     height: 50,
                     paddingTop: 10,
-                    paddingRight: 20,
+                    paddingRight:isMobile?10:20,
                     float: "right"
                 }}/>
             </div>

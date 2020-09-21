@@ -86,7 +86,7 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                                 <Float x={0} y={Text2Y} style={{width: "90vw", maxWidth: "480px"}}>
                                     {arabic? text.HEADLINE_2_ARABIC : text.HEADLINE_2_ENGLISH}
                                 </Float>
-                                <Float x={0} y={TitleY} style={{width: `calc( 90vw - 40px - ${isMobile?180:420}px )`}}>
+                                <Float x={0} y={TitleY} style={{width: `calc( 90vw - 40px - ${isMobile?140:420}px )`}}>
                                     <Title stage={stage} arabic={arabic}/>
                                 </Float>
                                 <FloatingImage x={0} y={ImageY} src={images.GIRL_0} width={250}/>
