@@ -10,12 +10,12 @@ import NavBar from "../component/NavBar";
 
 function Title(props:{arabic:boolean, stage: number}){
     const {arabic, stage} = props;
-    return <>
+    return <div style={{transition: "all 0.5s ease",transform: stage>3?"scale(0.7)": "none"}}>
         <h2 style={{margin:0}}>{arabic?'نادى الإشراق':'Glamour Club'}</h2>
         <p style={{margin:0, transform: "translateY(-11px)"}}>
             <small>{arabic?'العضوية السانوية':'Annual Membership'}</small>
         </p>
-    </>;
+    </div>;
 }
 
 
@@ -65,7 +65,7 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
             Text2Y = '-100vh'; // Hide text 2
             TitleY = '-200px - 50vh + 37px'; // Place Title on navbar
         }
-        //if(stage>4) ImageY = -150; // Show girl Image
+        if(stage>4) ImageY = -150; // Show girl Image
 
         return (
             <div className="animation-canvas">
