@@ -64,7 +64,7 @@ export default class Slide0 extends React.PureComponent<{
                         alt={"everlast logo"}
                     />
                 </Float>
-                <Float x={0} y={stage > 1 ? 200 : "60vh"}>
+                <Float x={0} y={stage > 1 ? 200 : "50vh +  200px"}>
                     <Cloud stage={stage - 2} />
                 </Float>
             </div>

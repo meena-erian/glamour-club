@@ -5,6 +5,7 @@ interface FloatProps{
     y:number|string; // Y Displacement from the origin in pixels
     transitionDelay?: string;
     style?: CSSProperties;
+    id?: string;
 }
 
 export default class Float extends React.Component<FloatProps>{
@@ -13,7 +14,9 @@ export default class Float extends React.Component<FloatProps>{
         const x = (typeof this.props.x === 'string')? this.props.x : this.props.x + 'px';
         const y = (typeof this.props.y === 'string')? this.props.y : this.props.y + 'px';
         return (
-            <div style={{
+            <div 
+            id={this.props.id}
+            style={{
                 position: "absolute",
                 left: `calc( 50% + ${x} )`,
                 top: `calc( 50% + ${y} )`,

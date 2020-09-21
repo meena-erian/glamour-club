@@ -32,7 +32,7 @@ export default class Cloud extends React.PureComponent<CloudProps>{
                     <Float x={0} y={"25vh - 150px"}>
 
                         {this.props.component ?
-                            <Float x={0} y={stage > 0 && stage < 2 ? 70 : 470}>
+                            <Float id={'cloud-content-wrapper'} x={0} y={stage > 0 && stage < 2 ? 70 : 470}>
                                 {this.props.component}
                             </Float>
                             :
