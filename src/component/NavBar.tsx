@@ -16,17 +16,19 @@ export default class NavBar extends React.PureComponent<NavBarProps> {
                 top: 0,
                 left: 0,
                 right: 0,
-                height: 50,
+                height: 70,
                 backgroundColor: "rgba(0,0,0,0.3)"
             }}>
                 <Image src={isMobile?images.WOMENS_DAY_MOBILE:images.WOMENS_DAY} style={{
-                    height: 30,
-                    padding: 10,
+                    height: 50,
+                    paddingTop: 10,
+                    paddingLeft: 20,
                     float: "left"
                 }} />
                 <Image src={isMobile?images.LOGO_NAV_MOBILE:images.LOGO_NAV} style={{
-                    height: 30,
-                    padding: 10,
+                    height: 50,
+                    paddingTop: 10,
+                    paddingRight: 20,
                     float: "right"
                 }}/>
             </div>
