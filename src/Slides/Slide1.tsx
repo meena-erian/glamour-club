@@ -7,6 +7,7 @@ import AnimatedLogo from "../component/AnimatedLogo";
 import {images, text} from "../constants"
 import NavBar from "../component/NavBar";
 
+type CSSDistance = number | string;
 
 export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any, arabic: boolean }> {
     public state = { stage: 0 };
@@ -37,14 +38,14 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
         const { index, back, next, isMobile, arabic } = this.props;
         const stage = this.state.stage;
 
-        var Text1Y = 0;
-        var Text2Y = 0;
-        var ImageY = 0;
+        var Text1Y:CSSDistance = 0;
+        var Text2Y:CSSDistance = 0;
+        var ImageY:CSSDistance = 0;
 
         if(stage>0) Text1Y = -425;
-        if(stage>1) Text1Y = -900;
+        if(stage>1) Text1Y = '-100vh';
         if(stage>2) Text2Y = -425;
-        if(stage>3) Text2Y = -900;
+        if(stage>3) Text2Y = '-100vh';
         if(stage>4) ImageY = -375;
 
         return (
