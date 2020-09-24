@@ -10,11 +10,13 @@ import Girl from "../component/Girl";
 
 export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any, arabic: boolean }> {
     public state = { stage: 0 };
-    componentDidMount(){
-        setInterval(()=>{
-            if(this.state.stage === 8) this.setState({stage: 0});
-            else this.setState({stage: this.state.stage + 1});
-        }, 2000);
+    constructor(props: any){
+        super(props);
+        this.next = this.next.bind(this);
+    }
+    next(){
+        if(this.state.stage === 8) this.setState({stage: 0});
+        else this.setState({stage: this.state.stage + 1});
     }
     render() {
         const { index, back, next, isMobile, arabic } = this.props;
@@ -30,10 +32,13 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                 <NavBar isMobile={isMobile} arabic={arabic} shown />
                 <Float x={0} y={200}>
                     <Cloud stage={0} component={
-                        <Girl x={0} y={-150} reaction={stage} />
+                        <Girl x={0} y={0} reaction={stage} />
                     }/>
                     <Float x={0} y={0}>
-                        <NextButton />
+                        <NextButton onClick={this.next}/>
+                    </Float>
+                    <Float x={100} y={0}>
+                        {stage}
                     </Float>
                 </Float>
             </div>

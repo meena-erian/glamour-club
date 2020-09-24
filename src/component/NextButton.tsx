@@ -1,7 +1,12 @@
 import React from "react";
 
-export default class NextButton extends React.PureComponent{
+interface NextButtonProps{
+    onClick?: any;
+}
+
+export default class NextButton extends React.PureComponent<NextButtonProps>{
     render(){
+        const {onClick} = this.props;
         return(
             <div style={{ // Shadow wrapper div
                 overflow: "visible"
@@ -19,7 +24,12 @@ export default class NextButton extends React.PureComponent{
                         backgroundColor: "rgba(0, 20, 0, 0.5)",
                         boxShadow: "0px 3px 5px rgba(0,0,0, 0.5)"
                 }}>
-                    test
+                    <span
+                        className="lang-button"
+                        onClick={onClick}
+                    >
+                        Next
+                    </span>
                 </p>
             </div>
         );
