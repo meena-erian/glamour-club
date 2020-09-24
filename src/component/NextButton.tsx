@@ -25,7 +25,7 @@ export default class NextButton extends React.PureComponent<NextButtonProps>{
                         width: "max-content"
                 }}>
                     <span
-                        className={disabled?undefined:"lang-button"}
+                        className={disabled?"button":"button active"}
                         onClick={disabled?undefined:onClick}
                     >
                         {text}

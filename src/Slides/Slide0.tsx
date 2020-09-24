@@ -46,11 +46,11 @@ export default class Slide0 extends React.PureComponent<{
         const stage = this.state.stage;
         return (
             <div className="animation-canvas">
-                <Float x={0} y={-6} style={{ zIndex: 99 }} id={"animated-border-wrapper"}>
+                <Float x={0} y={0} style={{ zIndex: 99 }} id={"animated-border-wrapper"}>
                     <AnimatedBorder stage={stage} isMobile={isMobile} nextSlide={this.nextSlide} />
                 </Float>
 
-                <Float x={0} y={0} style={{ zIndex: 100 }}>
+                <Float x={0} y={6} style={{ zIndex: 100 }}>
                     <AnimatedLogo isMobile={isMobile} stage={stage}/>
                 </Float>
                 <Float x={0} y={60}>
