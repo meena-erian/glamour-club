@@ -91,7 +91,7 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                     />
                 </Float>
                 <Float x={0} y={stage>4?200:"50vh + 100px"}>
-                    <NextButton text={arabic?"ماذا تشمل؟":"What does it include?"} disabled/>
+                    <NextButton arabic={arabic} stage={0} disabled/>
                 </Float>
             </div>
         );

@@ -1,14 +1,17 @@
 import React from "react";
+import {exclamations} from "../constants/offer";
 
 interface NextButtonProps{
     onClick?: any;
-    text: string;
+    stage: number;
     disabled?: boolean;
+    arabic: boolean;
 }
 
 export default class NextButton extends React.PureComponent<NextButtonProps>{
     render(){
-        const {onClick, text, disabled} = this.props;
+        const {onClick, stage, disabled, arabic} = this.props;
+        const currentText = exclamations[stage];
         return(
             <div style={{ // Shadow wrapper div
                 overflow: "visible"
@@ -28,7 +31,7 @@ export default class NextButton extends React.PureComponent<NextButtonProps>{
                         className={disabled?"button":"button active"}
                         onClick={disabled?undefined:onClick}
                     >
-                        {text}
+                        {arabic?currentText.ar:currentText.en}
                     </span>
                 </p>
             </div>
