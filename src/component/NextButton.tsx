@@ -6,11 +6,13 @@ interface NextButtonProps{
     stage: number;
     disabled?: boolean;
     arabic: boolean;
+    shrink?: boolean;
 }
 
 export default class NextButton extends React.PureComponent<NextButtonProps>{
     render(){
         const {onClick, stage, disabled, arabic} = this.props;
+        const shrink = true;
         const currentText = exclamations[stage];
         return(
             <div style={{ // Shadow wrapper div
@@ -25,7 +27,8 @@ export default class NextButton extends React.PureComponent<NextButtonProps>{
                         transition: "all 1s ease 0s",
                         backgroundColor: "rgba(0, 20, 0, 0.5)",
                         boxShadow: "0px 3px 5px rgba(0,0,0, 0.5)",
-                        width: "max-content"
+                        width: "max-content",
+                        lineHeight: shrink?"10px":undefined
                 }}>
                     <span
                         className={disabled?"button":"button active"}
