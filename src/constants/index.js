@@ -1,4 +1,4 @@
 import images from "./images";
 import text from "./text";
-
-export {images, text};
+import offer from "./offer";
+export {images, text, offer};
