@@ -1,21 +1,23 @@
 import React from "react";
 import { images } from "../constants";
 import Image from "../component/Image";
+import Title from "../component/Title";
 
 interface NavBarProps{
     isMobile: boolean;
     arabic: boolean;
+    shown?: boolean;
 }
 
 export default class NavBar extends React.PureComponent<NavBarProps> {
-    public state = {visible: false}
+    public state = {visible: this.props.shown?true:false}
     componentDidMount(){
         setTimeout(()=>{
             this.setState({visible: true})
         }, 14000);
     }
     render() {
-        const {isMobile, arabic} = this.props;
+        const {isMobile, arabic, shown} = this.props;
         return (
             <div style={{
                 position: "fixed",
@@ -33,6 +35,7 @@ export default class NavBar extends React.PureComponent<NavBarProps> {
                     paddingLeft: isMobile?10:20,
                     float: "left"
                 }} />
+                {shown && <Title arabic={arabic} stage={4} relative/>}
                 <Image src={isMobile?images.LOGO_NAV_MOBILE:images.LOGO_NAV} style={{
                     height: 50,
                     paddingTop: 10,

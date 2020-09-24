@@ -3,11 +3,15 @@ import Cloud from "../component/Cloud";
 import Float from "../component/Float";
 import AnimatedBorder from "../component/AnimatedBorder";
 import AnimatedLogo from "../component/AnimatedLogo";
+import NavBar from "../component/NavBar";
+import NextButton from "../component/NextButton";
+
+
 
 export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any, arabic: boolean }> {
     public state = { stage: 0 };
     render() {
-        const { index, back, next, isMobile } = this.props;
+        const { index, back, next, isMobile, arabic } = this.props;
         const stage = this.state.stage
         return (
             <div className="animation-canvas">
@@ -17,8 +21,12 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                 <Float x={0} y={0} style={{ zIndex: 100 }}>
                     <AnimatedLogo isMobile={isMobile} stage={4} />
                 </Float>
+                <NavBar isMobile={isMobile} arabic={arabic} shown />
                 <Float x={0} y={200}>
                     <Cloud stage={0} />
+                    <Float x={0} y={0}>
+                        <NextButton />
+                    </Float>
                 </Float>
             </div>
         );
