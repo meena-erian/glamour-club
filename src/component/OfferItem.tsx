@@ -46,6 +46,8 @@ export default class OfferItem extends React.PureComponent<OfferItemProps>{
             borderRadius: 10000
         }
         if (arabic) {
+            pstyle.direction = "rtl";
+            h3Style.direction = "rtl";
             return (<div style={outerStyle}>
                 <h3 style={h3Style}>{thisOffer.count} {text}</h3>
                 <p style={pstyle}><small style={priceTag}>السعر الاصلى</small> AED {thisOffer.price}{count > 1 ? " للجلسة" : ""}</p>
@@ -91,6 +93,10 @@ export default class OfferItem extends React.PureComponent<OfferItemProps>{
             paddingRight: 5,
             fontFamily: "sans-serif",
             borderRadius: 10000
+        }
+        if(arabic){
+            pstyle.direction = "rtl";
+            h5style.direction = "rtl";
         }
         return (<div>
             <Float x={0} y={0} style={numberStyle}>{thisOffer.count}</Float>
