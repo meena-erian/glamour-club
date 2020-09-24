@@ -35,7 +35,7 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                         <Girl x={0} y={0} reaction={stage} />
                     }/>
                     <Float x={0} y={0}>
-                        <NextButton onClick={this.next}/>
+                        <NextButton text={arabic?"مازا تتضمن؟":"What does it include?"} onClick={this.next}/>
                     </Float>
                     <Float x={100} y={0}>
                         {stage}

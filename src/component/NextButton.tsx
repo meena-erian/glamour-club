@@ -2,11 +2,13 @@ import React from "react";
 
 interface NextButtonProps{
     onClick?: any;
+    text: string;
+    disabled?: boolean;
 }
 
 export default class NextButton extends React.PureComponent<NextButtonProps>{
     render(){
-        const {onClick} = this.props;
+        const {onClick, text, disabled} = this.props;
         return(
             <div style={{ // Shadow wrapper div
                 overflow: "visible"
@@ -14,21 +16,19 @@ export default class NextButton extends React.PureComponent<NextButtonProps>{
                 <p style={{
                         border: "3px solid white",
                         borderRadius: 1000,
-                        //width: 290
-                        //height: 60,
                         padding: 10,
                         color: "rgb(119, 193, 192)",
-                        //margin: auto;
                         fontSize: 24,
                         transition: "all 1s ease 0s",
                         backgroundColor: "rgba(0, 20, 0, 0.5)",
-                        boxShadow: "0px 3px 5px rgba(0,0,0, 0.5)"
+                        boxShadow: "0px 3px 5px rgba(0,0,0, 0.5)",
+                        width: "max-content"
                 }}>
                     <span
-                        className="lang-button"
-                        onClick={onClick}
+                        className={disabled?undefined:"lang-button"}
+                        onClick={disabled?undefined:onClick}
                     >
-                        Next
+                        {text}
                     </span>
                 </p>
             </div>
