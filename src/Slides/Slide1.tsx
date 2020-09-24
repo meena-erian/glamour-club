@@ -58,14 +58,14 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
         }
         if(stage>3) {
             Text2Y = '-100vh'; // Hide text 2
-            TitleY = '-200px - 50vh + 37px'; // Place Title on navbar
+            TitleY = '-200px - 50vh + 42px'; // Place Title on navbar
         }
         if(stage>4) ImageY = -150; // Show girl Image
         if(stage>5) next();
 
         return (
             <div className="animation-canvas">
-                <Float x={0} y={-2} style={{ zIndex: 0 }}>
+                <Float x={0} y={-6} style={{ zIndex: 0 }} id={"animated-border-wrapper"}>
                     <AnimatedBorder stage={4} isMobile={isMobile} nextSlide={next} />
                 </Float>
                 <Float x={0} y={0} style={{ zIndex: 0 }}>
@@ -91,7 +91,7 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                     />
                 </Float>
                 <Float x={0} y={stage>4?200:"50vh + 100px"}>
-                    <NextButton text={arabic?"مازا تتضمن؟":"What does it include?"} disabled/>
+                    <NextButton text={arabic?"ماذا تشمل؟":"What does it include?"} disabled/>
                 </Float>
             </div>
         );

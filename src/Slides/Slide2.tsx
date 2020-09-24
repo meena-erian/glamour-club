@@ -23,7 +23,7 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
         const stage = this.state.stage
         return (
             <div className="animation-canvas">
-                <Float x={0} y={-2} style={{ zIndex: 0 }}>
+                <Float x={0} y={-6} style={{ zIndex: 0 }}>
                     <AnimatedBorder stage={4} isMobile={isMobile} nextSlide={next} />
                 </Float>
                 <Float x={0} y={0} style={{ zIndex: 0 }}>
@@ -35,7 +35,7 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                         <Girl x={0} y={0} reaction={stage} />
                     }/>
                     <Float x={0} y={0}>
-                        <NextButton text={arabic?"مازا تتضمن؟":"What does it include?"} onClick={this.next}/>
+                        <NextButton text={arabic?"ماذا تشمل؟":"What does it include?"} onClick={this.next}/>
                     </Float>
                     <Float x={100} y={0}>
                         {stage}

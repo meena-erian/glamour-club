@@ -55,7 +55,8 @@ export default function AnimatedBorder(props: AnimatedBorderProps) {
             <p style={innerStyle}>
                 <span className="lang-button" style={{
                     float: "left",
-                    padding: 14,
+                    padding: 7,
+                    paddingLeft: 20,
                     fontWeight: "bold",
                     transition: "all .5s ease",
                     opacity: langSwitch ? 1 : 0
@@ -64,7 +65,8 @@ export default function AnimatedBorder(props: AnimatedBorderProps) {
                 >English</span>
                 <span className="lang-button" style={{
                     float: "right",
-                    padding: 14,
+                    padding: 7,
+                    paddingRight: 20,
                     fontWeight: "bold",
                     transition: "all .5s ease",
                     opacity: langSwitch ? 1 : 0
