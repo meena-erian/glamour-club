@@ -9,12 +9,20 @@ import Girl from "../component/Girl";
 
 
 export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any, arabic: boolean }> {
-    public state = { stage: 0 };
+    public state = { stage: 0, inprogress: false };
     constructor(props: any){
         super(props);
         this.next = this.next.bind(this);
+        this.suspendButton = this.suspendButton.bind(this);
+    }
+    suspendButton(){
+        setTimeout(()=>{
+            this.setState({inprogress: false});
+        }, 2000);
+        this.setState({inprogress: true});
     }
     next(){
+        this.suspendButton();
         if(this.state.stage === 8) this.setState({stage: 0});
         else this.setState({stage: this.state.stage + 1});
     }

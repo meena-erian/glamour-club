@@ -4,7 +4,7 @@ import Float from "../component/Float";
 import FloatingImage from "../component/FloatingImage";
 import AnimatedBorder from "../component/AnimatedBorder";
 import AnimatedLogo from "../component/AnimatedLogo";
-import {images, text} from "../constants"
+import {images, text} from "../constants";
 import NavBar from "../component/NavBar";
 import NextButton from "../component/NextButton";
 import Title from "../component/Title";
