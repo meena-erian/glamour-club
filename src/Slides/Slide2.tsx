@@ -28,10 +28,10 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
     }
     render() {
         const {stage, reaction, inprogress} = this.state;
-        const { index, back, next, isMobile, arabic } = this.props;
+        const { next, isMobile, arabic } = this.props;
         return (
             <div className="animation-canvas">
-                <OfferItems stage={stage} />
+                <OfferItems stage={stage} isMobile={isMobile} arabic={arabic}/>
                 <Float x={0} y={0} style={{ zIndex: 0 }}>
                     <AnimatedBorder stage={4} isMobile={isMobile} nextSlide={next} />
                 </Float>
