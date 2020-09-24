@@ -7,7 +7,6 @@ interface OfferItemProps {
     isMobile?: boolean;
     id: number;
     onCloud?: boolean;
-    hidden?: boolean;
 }
 
 
@@ -23,20 +22,20 @@ export default class OfferItem extends React.PureComponent<OfferItemProps>{
         const thisOffer = offer[id];
         const count = parseInt(thisOffer.count) || 1000;
         const text = arabic ? thisOffer.ar : thisOffer.en;
-        var outerStyle: CSSProperties = {
+        var outerStyle:CSSProperties = {
             color: "rgba(119,193,192)"
         }
-        var h3Style: CSSProperties = {
+        var h3Style:CSSProperties = {
             margin: 0,
             lineHeight: "30px",
             fontSize: "25px"
         }
-        var pstyle: CSSProperties = {
+        var pstyle:CSSProperties = {
             fontSize: "15px",
             margin: 0,
             lineHeight: "15px"
         }
-        var priceTag: CSSProperties = {
+        var priceTag:CSSProperties = {
             color: "white",
             backgroundColor: "rgba(119,193,192)",
             padding: 0,
@@ -48,22 +47,19 @@ export default class OfferItem extends React.PureComponent<OfferItemProps>{
         if (arabic) {
             return (<div style={outerStyle}>
                 <h3 style={h3Style}>{thisOffer.count} {text}</h3>
-                <p style={pstyle}><small style={priceTag}>السعر الاصلى</small> AED {thisOffer.price}{count > 1 ? " للجلسة" : ""}</p>
+                <p style={pstyle}><small style={priceTag}>السعر الاصلى</small> AED {thisOffer.price}{count > 1 ?" للجلسة":""}</p>
             </div>);
         }
         else {
             return (<div style={outerStyle}>
                 <h3 style={h3Style}>{thisOffer.count} {text}</h3>
-                <p style={pstyle}><small style={priceTag}>Original Price</small> AED {thisOffer.price}{count > 1 ? " per session" : ""}</p>
+                <p style={pstyle}><small style={priceTag}>Original Price</small> AED {thisOffer.price}{count > 1 ?" per session":""}</p>
             </div>);
         }
     }
     renderCycle() {
-        const { arabic, id, hidden, isMobile } = this.props;
-        const left = id === 0 || id === 4;
+        const { arabic, isMobile, id } = this.props;
         const thisOffer = offer[id];
-        const count = parseInt(thisOffer.count) || 1000;
-        const text = arabic ? thisOffer.ar : thisOffer.en;
         var numberStyle: CSSProperties = {
             borderRadius: 1000,
             backgroundColor: "white",
@@ -73,43 +69,8 @@ export default class OfferItem extends React.PureComponent<OfferItemProps>{
             fontWeight: "bold",
             transition: "all .5s ease"
         }
-        var h5style: CSSProperties = {
-            lineHeight: "25px",
-            fontWeight: "bold",
-            margin: 0
-        }
-        var pstyle: CSSProperties = {
-            fontSize: "10px",
-            margin: 0,
-            lineHeight: "15px"
-        }
-        var priceTag: CSSProperties = {
-            backgroundColor: "white",
-            color: "rgba(119,193,192)",
-            padding: 0,
-            paddingLeft: 5,
-            paddingRight: 5,
-            fontFamily: "sans-serif",
-            borderRadius: 10000
-        }
         return (<div>
-            <Float x={0} y={0} style={numberStyle}>{thisOffer.count}</Float>
-            {!isMobile &&
-                <Float x={left ? -25 : 25} y={0}
-                    style={{
-                        width: "max-content",
-                        maxWidth: "calc( 50vw - 140px )",
-                        textAlign: left ? "right" : "left",
-                        transform: `translate(${left ? '-100%' : '0'}, -50%)`,
-                        opacity: hidden ? 0 : 1
-                    }}>
-                    <h5 style={h5style}>{text}</h5>
-                    {arabic ?
-                        <p style={pstyle}><small style={priceTag}>السعر الاصلى</small> AED {thisOffer.price}{count > 1 ? " للجلسة" : ""}</p> :
-                        <p style={pstyle}><small style={priceTag}>Original Price</small> AED {thisOffer.price}{count > 1 ? " per session" : ""}</p>
-                    }
-                </Float>
-            }
+            <div style={numberStyle}>{thisOffer.count}</div>
         </div>);
     }
     render() {
