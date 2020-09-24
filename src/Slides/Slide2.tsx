@@ -46,9 +46,6 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                     <Float x={0} y={0}>
                         <NextButton arabic={arabic} stage={stage} onClick={this.next} disabled={inprogress}/>
                     </Float>
-                    <Float x={100} y={0}>
-                        {stage}
-                    </Float>
                 </Float>
             </div>
         );
