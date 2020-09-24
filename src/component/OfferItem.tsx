@@ -18,7 +18,9 @@ export default class OfferItem extends React.PureComponent<OfferItemProps>{
             borderRadius: 1000,
             backgroundColor: "white",
             color: "rgba(119,193,192)",
-            padding: 7,
+            paddingLeft: 13,
+            paddingRight: 13,
+            fontWeight: "bold",
             transition: "all .5s ease"
         }
         return (<div>
