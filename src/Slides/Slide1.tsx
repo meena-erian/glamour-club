@@ -6,6 +6,7 @@ import AnimatedBorder from "../component/AnimatedBorder";
 import AnimatedLogo from "../component/AnimatedLogo";
 import {images, text} from "../constants"
 import NavBar from "../component/NavBar";
+import NextButton from "../component/NextButton";
 
 
 function Title(props:{arabic:boolean, stage: number}){
@@ -93,6 +94,9 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                             </Float>
                         }
                     />
+                </Float>
+                <Float x={0} y={stage>4?200:"50vh + 100px"}>
+                    <NextButton />
                 </Float>
             </div>
         );
