@@ -46,6 +46,10 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
             this.setState({ stage: this.state.stage + 1 });
         }, 15000); // Stage = 5
 
+        setTimeout(() => {
+            this.setState({ stage: this.state.stage + 1 });
+        }, 16000); // Stage = 5
+
     }
     render() {
         const { index, back, next, isMobile, arabic } = this.props;
@@ -67,6 +71,7 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
             TitleY = '-200px - 50vh + 37px'; // Place Title on navbar
         }
         if(stage>4) ImageY = -150; // Show girl Image
+        if(stage>5) next();
 
         return (
             <div className="animation-canvas">
