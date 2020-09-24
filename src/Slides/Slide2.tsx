@@ -6,10 +6,10 @@ import AnimatedLogo from "../component/AnimatedLogo";
 import NavBar from "../component/NavBar";
 import NextButton from "../component/NextButton";
 import Girl from "../component/Girl";
-
+import OfferItems from "../component/OfferItems";
 
 export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any, arabic: boolean }> {
-    public state = { stage: 0, inprogress: false };
+    public state = { stage: 0, inprogress: false, reaction: 0 };
     constructor(props: any){
         super(props);
         this.next = this.next.bind(this);
@@ -17,7 +17,7 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
     }
     suspendButton(){
         setTimeout(()=>{
-            this.setState({inprogress: false});
+            this.setState({inprogress: false, reaction: this.state.reaction + 1});
         }, 2000);
         this.setState({inprogress: true});
     }
@@ -27,10 +27,11 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
         else this.setState({stage: this.state.stage + 1});
     }
     render() {
+        const {stage, reaction, inprogress} = this.state;
         const { index, back, next, isMobile, arabic } = this.props;
-        const stage = this.state.stage
         return (
             <div className="animation-canvas">
+                <OfferItems stage={stage} />
                 <Float x={0} y={-6} style={{ zIndex: 0 }}>
                     <AnimatedBorder stage={4} isMobile={isMobile} nextSlide={next} />
                 </Float>
@@ -40,10 +41,10 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                 <NavBar isMobile={isMobile} arabic={arabic} shown />
                 <Float x={0} y={200}>
                     <Cloud stage={0} component={
-                        <Girl x={0} y={0} reaction={stage} />
+                        <Girl x={0} y={0} reaction={reaction} />
                     }/>
                     <Float x={0} y={0}>
-                        <NextButton text={arabic?"ماذا تشمل؟":"What does it include?"} onClick={this.next}/>
+                        <NextButton text={arabic?"ماذا تشمل؟":"What does it include?"} onClick={this.next} disabled={inprogress}/>
                     </Float>
                     <Float x={100} y={0}>
                         {stage}
