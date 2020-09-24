@@ -58,7 +58,7 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
         if(stage>0) Text1Y = -200; // Show text 1
         if(stage>1) Text1Y = '-100vh'; // Hide text 1
         if(stage>2) {
-            Text2Y = -300; // Show text 2
+            Text2Y = -320; // Show text 2
             TitleY = -200; // Show title
         }
         if(stage>3) {
