@@ -7,6 +7,7 @@ import NavBar from "../component/NavBar";
 import NextButton from "../component/NextButton";
 import Girl from "../component/Girl";
 import OfferItems from "../component/OfferItems";
+import OfferItem from "../component/OfferItem";
 
 export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any, arabic: boolean }> {
     public state = { stage: 0, inprogress: false, reaction: 0 };
@@ -43,8 +44,11 @@ export default class Slide extends React.PureComponent<{ isMobile: boolean, inde
                     <Cloud stage={0} component={
                         <Girl x={0} y={0} reaction={reaction} />
                     }/>
-                    <Float x={0} y={0}>
-                        <NextButton arabic={arabic} stage={stage} onClick={this.next} disabled={inprogress}/>
+                    {isMobile && stage && <Float x={0} y={0} style={{width: "max-content"}}>
+                        <OfferItem arabic={arabic} id={stage-1} onCloud />
+                    </Float>}
+                    <Float x={0} y={isMobile&&stage>0?70:0}>
+                        <NextButton arabic={arabic} stage={stage} onClick={this.next} shrink={stage>0&&isMobile} disabled={inprogress}/>
                     </Float>
                 </Float>
             </div>
