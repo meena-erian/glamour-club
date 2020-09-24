@@ -6,6 +6,19 @@
   background-position: center;
 }
 
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/Cairo-Regular.ttf'); /* IE9 Compat Modes */
+  src: local('Cairo'), local('Cairo'),
+       url('/assets/Cairo-Regular.ttf') format('truetype')
+}
+
+* {
+  font-family: Cairo;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
