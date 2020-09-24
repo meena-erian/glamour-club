@@ -7,17 +7,7 @@ import AnimatedLogo from "../component/AnimatedLogo";
 import {images, text} from "../constants"
 import NavBar from "../component/NavBar";
 import NextButton from "../component/NextButton";
-
-
-function Title(props:{arabic:boolean, stage: number}){
-    const {arabic, stage} = props;
-    return <div style={{transition: "all 0.5s ease",transform: stage>3?"scale(0.7)": "none"}}>
-        <h2 style={{margin:0}}>{arabic?'نادى الإشراق':'Glamour Club'}</h2>
-        <p style={{margin:0, transform: "translateY(-11px)"}}>
-            <small>{arabic?'العضوية السانوية':'Annual Membership'}</small>
-        </p>
-    </div>;
-}
+import Title from "../component/Title";
 
 
 type CSSDistance = number | string;
