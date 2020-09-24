@@ -10,7 +10,7 @@ import OfferItems from "../component/OfferItems";
 import OfferItem from "../component/OfferItem";
 
 export default class Slide extends React.PureComponent<{ isMobile: boolean, index: number, next: any, setArabic: any, back: any, arabic: boolean }> {
-    public state = { stage: 0, inprogress: false, reaction: 0 };
+    public state = { stage: 5, inprogress: false, reaction: 0 };
     constructor(props: any){
         super(props);
         this.next = this.next.bind(this);
