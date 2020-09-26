@@ -24,7 +24,8 @@ export default class OfferItem extends React.PureComponent<OfferItemProps>{
         const count = parseInt(thisOffer.count) || 1000;
         const text = arabic ? thisOffer.ar : thisOffer.en;
         var outerStyle: CSSProperties = {
-            color: "rgba(119,193,192)"
+            color: "rgba(119,193,192)",
+            maxWidth: "calc( 100vw - 10px )"
         }
         var h3Style: CSSProperties = {
             margin: 0,
